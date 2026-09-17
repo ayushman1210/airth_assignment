@@ -2,9 +2,10 @@
 import { useEffect, useState } from 'react';
 
 const statuses = ['pending', 'running', 'completed', 'failed'];
+const apiBaseUrl = (import.meta.env.VITE_API_URL || 'https://airth-assignment-1.onrender.com').replace(/\/$/, '');
 
 async function request(path, options = {}) {
-  const response = await fetch(`/api${path}`, {
+  const response = await fetch(`${apiBaseUrl}${path}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });
