@@ -18,16 +18,15 @@ app.use((error, req, res, next) => {
 
 
 app.get('/',(req,res)=>{
-    res.status(200).json({
-        message:"api running fine"
-    })
+console.log('hello world')
 })
 //keeping the server up all time
 
+setInterval(async()=>{
+const ping =await fetch("http://localhost:3000/")
+console.log(ping)
+},5000)
 
-async function hello(){
-    const ping =await fetch('')
-}
 
 const server = app.listen(port, () => {
     console.log(`server started on port ${port}`);
