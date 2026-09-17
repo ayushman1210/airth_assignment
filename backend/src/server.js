@@ -16,9 +16,25 @@ app.use((error, req, res, next) => {
     res.status(500).json({ message: 'something went wrong' });
 });
 
+
+app.get('/',(req,res)=>{
+    res.status(200).json({
+        message:"api running fine"
+    })
+})
+//keeping the server up all time
+
+
+async function hello(){
+    const ping =await fetch('')
+}
+
 const server = app.listen(port, () => {
     console.log(`server started on port ${port}`);
 });
+
+
+//gracefully shutting down backend 
 
 let shuttingDown = false;
 
