@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const jobsRouter = require('./routes/jobs_route');
 const { db } = require('./config/db');
 
@@ -9,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 app.use('/jobs', jobsRouter);
 
 app.use((error, req, res, next) => {
