@@ -19,6 +19,9 @@ app.use((error, req, res, next) => {
 
 app.get('/',(req,res)=>{
 console.log('hello world')
+res.status(200).json({
+    message:"thank u airth team for the opportunity"
+})
 })
 //keeping the server up all time
 
